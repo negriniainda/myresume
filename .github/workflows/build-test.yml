@@ -1,0 +1,51 @@
+name: Build Test
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: bilingual-resume/package-lock.json
+    
+    - name: Install dependencies
+      run: |
+        cd bilingual-resume
+        npm ci
+    
+    - name: Run linting
+      run: |
+        cd bilingual-resume
+        npm run lint
+    
+    - name: Run tests
+      run: |
+        cd bilingual-resume
+        npm run test
+    
+    - name: Build project
+      run: |
+        cd bilingual-resume
+        npm run build
+    
+    - name: Check build output
+      run: |
+        cd bilingual-resume
+        ls -la out/
+        echo "Build completed successfully!"
