@@ -1,0 +1,510 @@
+{
+  "personalInfo": {
+    "name": "Marcelo Negrini",
+    "title": "Especialista em IA e Liderança Tecnológica",
+    "location": "São Paulo, SP, Brasil",
+    "email": "marcelo.negrini@example.com",
+    "phone": "+55 11 99999-9999",
+    "linkedin": "https://linkedin.com/in/marcelonegrini",
+    "github": "https://github.com/marcelonegrini",
+    "website": "https://marcelonegrini.dev"
+  },
+  "objective": "Líder tecnológico apaixonado com mais de 15 anos de experiência impulsionando transformação digital e construindo soluções escaláveis. Busco aproveitar minha expertise em IA, machine learning e liderança de equipes para criar produtos inovadores que causem impacto significativo.",
+  "summary": {
+    "title": "Resumo Profissional",
+    "items": [
+      "Mais de 15 anos de experiência em liderança tecnológica e transformação digital",
+      "Especialista em IA, machine learning e soluções orientadas por dados",
+      "Histórico comprovado em escalar equipes de engenharia e entregar projetos complexos",
+      "Sólida experiência em fintech, e-commerce e desenvolvimento de software empresarial",
+      "Fluente em português, inglês e espanhol com experiência em projetos globais"
+    ]
+  },
+  "experience": [
+    {
+      "id": "cto-techcorp",
+      "position": "Chief Technology Officer",
+      "company": "TechCorp Brasil",
+      "location": "São Paulo, SP",
+      "period": {
+        "start": "2020",
+        "end": "Atual"
+      },
+      "description": "Liderando iniciativas de transformação digital e gerenciando equipes de engenharia em múltiplas unidades de negócio",
+      "achievements": [
+        {
+          "metric": "40%",
+          "description": "melhoria na eficiência operacional",
+          "impact": "Reduziu custos operacionais em R$ 6M anualmente através de automação e otimização de processos"
+        },
+        {
+          "metric": "R$ 10M",
+          "description": "aumento de receita anual através de soluções de IA",
+          "impact": "Implementou modelos de machine learning para insights de clientes e análise preditiva"
+        },
+        {
+          "metric": "15+",
+          "description": "equipes de engenharia gerenciadas",
+          "impact": "Escalou organização de engenharia de 30 para 120+ profissionais"
+        }
+      ],
+      "responsibilities": [
+        "Definir e executar estratégia tecnológica alinhada com objetivos de negócio",
+        "Liderar iniciativas de transformação digital em todas as unidades de negócio",
+        "Gerenciar equipes de engenharia e estabelecer melhores práticas de desenvolvimento",
+        "Impulsionar adoção de soluções de IA e machine learning",
+        "Supervisionar infraestrutura em nuvem e práticas DevOps"
+      ],
+      "technologies": ["React", "Node.js", "AWS", "Python", "Machine Learning", "Docker", "Kubernetes", "TypeScript", "PostgreSQL", "Redis"],
+      "teamSize": 120,
+      "budget": "R$ 25M",
+      "companySize": "Large",
+      "industry": "Technology",
+      "roleType": "Executive"
+    },
+    {
+      "id": "vp-engineering-fintech",
+      "position": "VP de Engenharia",
+      "company": "FinTech Solutions",
+      "location": "São Paulo, SP",
+      "period": {
+        "start": "2018",
+        "end": "2020"
+      },
+      "description": "Liderou organização de engenharia para startup fintech em rápido crescimento, focando em soluções de pagamento escaláveis",
+      "achievements": [
+        {
+          "metric": "300%",
+          "description": "aumento no volume de transações",
+          "impact": "Escalou plataforma para processar 1M+ transações diárias"
+        },
+        {
+          "metric": "99.9%",
+          "description": "uptime do sistema alcançado",
+          "impact": "Implementou monitoramento robusto e procedimentos de resposta a incidentes"
+        },
+        {
+          "metric": "50%",
+          "description": "entrega de funcionalidades mais rápida",
+          "impact": "Introduziu pipelines CI/CD e metodologias ágeis"
+        }
+      ],
+      "responsibilities": [
+        "Construir e liderar equipes de engenharia de alta performance",
+        "Arquitetar sistemas de processamento de pagamentos escaláveis",
+        "Garantir conformidade regulatória e padrões de segurança",
+        "Implementar práticas DevOps e soluções de monitoramento",
+        "Colaborar com equipes de produto e negócio no planejamento de roadmap"
+      ],
+      "technologies": ["Java", "Spring Boot", "Kafka", "PostgreSQL", "Redis", "AWS", "Docker", "Jenkins", "Prometheus"],
+      "teamSize": 45,
+      "budget": "R$ 12.5M",
+      "companySize": "Medium",
+      "industry": "Financial Services",
+      "roleType": "Director"
+    },
+    {
+      "id": "senior-architect-ecommerce",
+      "position": "Arquiteto de Software Sênior",
+      "company": "E-Commerce Global",
+      "location": "São Paulo, SP",
+      "period": {
+        "start": "2015",
+        "end": "2018"
+      },
+      "description": "Projetou e implementou arquitetura de microsserviços para plataforma de e-commerce de alto tráfego",
+      "achievements": [
+        {
+          "metric": "10x",
+          "description": "melhoria de performance",
+          "impact": "Reduziu tempos de carregamento de página de 3s para 300ms através de otimização"
+        },
+        {
+          "metric": "500K+",
+          "description": "usuários simultâneos suportados",
+          "impact": "Arquitetou sistema para lidar com picos de tráfego da Black Friday"
+        },
+        {
+          "metric": "30%",
+          "description": "redução de custos de infraestrutura",
+          "impact": "Otimizou recursos em nuvem e implementou auto-scaling"
+        }
+      ],
+      "responsibilities": [
+        "Projetar arquitetura de microsserviços e especificações de API",
+        "Liderar decisões técnicas e revisões de código",
+        "Mentorar desenvolvedores júnior e pleno",
+        "Otimizar performance e escalabilidade do sistema",
+        "Colaborar com DevOps em estratégias de deployment"
+      ],
+      "technologies": ["Node.js", "React", "MongoDB", "Redis", "AWS", "Docker", "Elasticsearch", "GraphQL"],
+      "teamSize": 25,
+      "budget": "R$ 7.5M",
+      "companySize": "Large",
+      "industry": "E-commerce",
+      "roleType": "Team Lead"
+    },
+    {
+      "id": "fullstack-developer-startup",
+      "position": "Desenvolvedor Full Stack Sênior",
+      "company": "Innovation Startup",
+      "location": "São Paulo, SP",
+      "period": {
+        "start": "2012",
+        "end": "2015"
+      },
+      "description": "Desenvolvimento full-stack para plataforma SaaS atendendo clientes empresariais",
+      "achievements": [
+        {
+          "metric": "100+",
+          "description": "clientes empresariais integrados",
+          "impact": "Construiu processos escaláveis de onboarding e integração"
+        },
+        {
+          "metric": "95%",
+          "description": "score de satisfação do cliente",
+          "impact": "Entregou funcionalidades de alta qualidade com bugs mínimos"
+        },
+        {
+          "metric": "3x",
+          "description": "aumento na velocidade de desenvolvimento",
+          "impact": "Implementou testes automatizados e pipelines de deployment"
+        }
+      ],
+      "responsibilities": [
+        "Desenvolver aplicações web full-stack usando frameworks modernos",
+        "Projetar e implementar APIs RESTful",
+        "Criar interfaces de usuário responsivas",
+        "Escrever testes unitários e de integração abrangentes",
+        "Participar de processos de desenvolvimento ágil"
+      ],
+      "technologies": ["JavaScript", "Angular", "Node.js", "MySQL", "AWS", "Git", "Jenkins"],
+      "teamSize": 8,
+      "budget": "R$ 2.5M",
+      "companySize": "Startup",
+      "industry": "SaaS",
+      "roleType": "Individual Contributor"
+    }
+  ],
+  "education": [
+    {
+      "id": "msc-usp",
+      "degree": "Mestrado em Ciência da Computação",
+      "institution": "Universidade de São Paulo (USP)",
+      "location": "São Paulo, SP",
+      "period": {
+        "start": "2014",
+        "end": "2016"
+      },
+      "description": "Foco: Inteligência Artificial e Machine Learning",
+      "type": "degree"
+    },
+    {
+      "id": "bsc-unicamp",
+      "degree": "Bacharelado em Engenharia da Computação",
+      "institution": "Universidade Estadual de Campinas (UNICAMP)",
+      "location": "Campinas, SP",
+      "period": {
+        "start": "2010",
+        "end": "2014"
+      },
+      "description": "Foco: Engenharia de Software e Arquitetura de Sistemas",
+      "gpa": "3.8/4.0",
+      "honors": ["Magna Cum Laude", "Lista do Reitor"],
+      "type": "degree"
+    },
+    {
+      "id": "aws-solutions-architect",
+      "degree": "AWS Certified Solutions Architect - Professional",
+      "institution": "Amazon Web Services",
+      "location": "Online",
+      "period": {
+        "start": "2022",
+        "end": "2025"
+      },
+      "description": "Arquitetura avançada em nuvem e design de soluções empresariais",
+      "certifications": ["AWS Solutions Architect Professional", "AWS DevOps Engineer Professional"],
+      "type": "certification"
+    },
+    {
+      "id": "kubernetes-cka",
+      "degree": "Certified Kubernetes Administrator (CKA)",
+      "institution": "Cloud Native Computing Foundation",
+      "location": "Online",
+      "period": {
+        "start": "2021",
+        "end": "2024"
+      },
+      "description": "Expertise em orquestração de containers e gerenciamento de clusters",
+      "certifications": ["CKA", "CKAD"],
+      "type": "certification"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Linguagens de Programação",
+      "skills": [
+        {
+          "name": "JavaScript",
+          "level": "Expert",
+          "yearsOfExperience": 10
+        },
+        {
+          "name": "Python",
+          "level": "Expert",
+          "yearsOfExperience": 8
+        },
+        {
+          "name": "TypeScript",
+          "level": "Advanced",
+          "yearsOfExperience": 6
+        },
+        {
+          "name": "Java",
+          "level": "Advanced",
+          "yearsOfExperience": 7
+        },
+        {
+          "name": "Go",
+          "level": "Intermediate",
+          "yearsOfExperience": 3
+        },
+        {
+          "name": "Rust",
+          "level": "Beginner",
+          "yearsOfExperience": 1
+        }
+      ]
+    },
+    {
+      "name": "Tecnologias Frontend",
+      "skills": [
+        {
+          "name": "React",
+          "level": "Expert",
+          "yearsOfExperience": 8
+        },
+        {
+          "name": "Next.js",
+          "level": "Advanced",
+          "yearsOfExperience": 5
+        },
+        {
+          "name": "Vue.js",
+          "level": "Advanced",
+          "yearsOfExperience": 4
+        },
+        {
+          "name": "Angular",
+          "level": "Intermediate",
+          "yearsOfExperience": 3
+        },
+        {
+          "name": "Tailwind CSS",
+          "level": "Advanced",
+          "yearsOfExperience": 4
+        },
+        {
+          "name": "Framer Motion",
+          "level": "Intermediate",
+          "yearsOfExperience": 2
+        }
+      ]
+    },
+    {
+      "name": "Backend & APIs",
+      "skills": [
+        {
+          "name": "Node.js",
+          "level": "Expert",
+          "yearsOfExperience": 9
+        },
+        {
+          "name": "Express.js",
+          "level": "Expert",
+          "yearsOfExperience": 8
+        },
+        {
+          "name": "GraphQL",
+          "level": "Advanced",
+          "yearsOfExperience": 5
+        },
+        {
+          "name": "REST APIs",
+          "level": "Expert",
+          "yearsOfExperience": 10
+        },
+        {
+          "name": "Spring Boot",
+          "level": "Advanced",
+          "yearsOfExperience": 6
+        },
+        {
+          "name": "FastAPI",
+          "level": "Intermediate",
+          "yearsOfExperience": 3
+        }
+      ]
+    },
+    {
+      "name": "Bancos de Dados",
+      "skills": [
+        {
+          "name": "PostgreSQL",
+          "level": "Expert",
+          "yearsOfExperience": 8
+        },
+        {
+          "name": "MongoDB",
+          "level": "Advanced",
+          "yearsOfExperience": 6
+        },
+        {
+          "name": "Redis",
+          "level": "Advanced",
+          "yearsOfExperience": 5
+        },
+        {
+          "name": "MySQL",
+          "level": "Advanced",
+          "yearsOfExperience": 7
+        },
+        {
+          "name": "Elasticsearch",
+          "level": "Intermediate",
+          "yearsOfExperience": 4
+        },
+        {
+          "name": "DynamoDB",
+          "level": "Intermediate",
+          "yearsOfExperience": 3
+        }
+      ]
+    },
+    {
+      "name": "Cloud & DevOps",
+      "skills": [
+        {
+          "name": "AWS",
+          "level": "Expert",
+          "yearsOfExperience": 8
+        },
+        {
+          "name": "Docker",
+          "level": "Expert",
+          "yearsOfExperience": 7
+        },
+        {
+          "name": "Kubernetes",
+          "level": "Advanced",
+          "yearsOfExperience": 5
+        },
+        {
+          "name": "Terraform",
+          "level": "Advanced",
+          "yearsOfExperience": 4
+        },
+        {
+          "name": "Jenkins",
+          "level": "Advanced",
+          "yearsOfExperience": 6
+        },
+        {
+          "name": "GitHub Actions",
+          "level": "Advanced",
+          "yearsOfExperience": 4
+        }
+      ]
+    },
+    {
+      "name": "IA & Machine Learning",
+      "skills": [
+        {
+          "name": "TensorFlow",
+          "level": "Advanced",
+          "yearsOfExperience": 5
+        },
+        {
+          "name": "PyTorch",
+          "level": "Advanced",
+          "yearsOfExperience": 4
+        },
+        {
+          "name": "Scikit-learn",
+          "level": "Expert",
+          "yearsOfExperience": 6
+        },
+        {
+          "name": "OpenAI API",
+          "level": "Advanced",
+          "yearsOfExperience": 2
+        },
+        {
+          "name": "Pandas",
+          "level": "Expert",
+          "yearsOfExperience": 7
+        },
+        {
+          "name": "NumPy",
+          "level": "Expert",
+          "yearsOfExperience": 7
+        }
+      ]
+    },
+    {
+      "name": "Liderança & Gestão",
+      "skills": [
+        {
+          "name": "Liderança de Equipes",
+          "level": "Expert",
+          "yearsOfExperience": 10
+        },
+        {
+          "name": "Agile/Scrum",
+          "level": "Expert",
+          "yearsOfExperience": 12
+        },
+        {
+          "name": "Planejamento Estratégico",
+          "level": "Advanced",
+          "yearsOfExperience": 8
+        },
+        {
+          "name": "Mentoria",
+          "level": "Expert",
+          "yearsOfExperience": 9
+        },
+        {
+          "name": "Gestão de Produtos",
+          "level": "Advanced",
+          "yearsOfExperience": 6
+        },
+        {
+          "name": "Gestão de Orçamento",
+          "level": "Advanced",
+          "yearsOfExperience": 7
+        }
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "name": "Português",
+      "proficiency": "Nativo"
+    },
+    {
+      "name": "Inglês",
+      "proficiency": "Fluente (C2)"
+    },
+    {
+      "name": "Espanhol",
+      "proficiency": "Intermediário (B2)"
+    }
+  ],
+  "activities": [
+    "Palestrante em conferências de tecnologia (DevOps Days, React Conf Brasil)",
+    "Mentor em programas de aceleração de startups",
+    "Contribuidor open source (ecossistema React, Node.js)",
+    "Escritor de blog técnico com mais de 50K leitores mensais"
+  ]
+}

@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://marcelonegrini.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Block access to sensitive files
+Disallow: /api/
+Disallow: /_next/static/chunks/
+Disallow: /admin/
+Disallow: /.well-known/
+
+# Allow access to important resources
+Allow: /favicon.ico
+Allow: /manifest.json
+Allow: /_next/static/css/
+Allow: /_next/static/media/
+
+# SEO optimizations
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /

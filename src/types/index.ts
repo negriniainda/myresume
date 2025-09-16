@@ -26,6 +26,9 @@ export interface ExperienceItem {
   teamSize?: number;
   budget?: string;
   responsibilities?: string[];
+  companySize?: 'Startup' | 'Small' | 'Medium' | 'Large' | 'Enterprise';
+  industry?: string;
+  roleType?: 'Individual Contributor' | 'Team Lead' | 'Manager' | 'Director' | 'Executive';
 }
 
 export interface Achievement {
@@ -46,6 +49,8 @@ export interface EducationItem {
   description?: string;
   gpa?: string;
   honors?: string[];
+  certifications?: string[];
+  type?: 'degree' | 'certification' | 'course';
 }
 
 export interface Skill {

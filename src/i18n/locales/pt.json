@@ -1,0 +1,180 @@
+{
+  "navigation": {
+    "home": "Início",
+    "summary": "Resumo",
+    "experience": "Experiência",
+    "education": "Educação",
+    "skills": "Habilidades",
+    "projects": "Projetos",
+    "contact": "Contato"
+  },
+  "language": {
+    "english": "Inglês",
+    "portuguese": "Português",
+    "switchTo": "Mudar para {{language}}"
+  },
+  "common": {
+    "loading": "Carregando...",
+    "error": "Ocorreu um erro",
+    "retry": "Tentar novamente",
+    "readMore": "Ler Mais",
+    "readLess": "Ler Menos",
+    "viewDetails": "Ver Detalhes",
+    "close": "Fechar",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "clear": "Limpar",
+    "all": "Todos"
+  },
+  "hero": {
+    "noData": "Nenhuma informação pessoal disponível",
+    "scrollDown": "Role para baixo",
+    "website": "Website"
+  },
+  "summary": {
+    "noData": "Nenhuma informação de resumo disponível",
+    "title": "Resumo Profissional",
+    "objective": "Objetivo",
+    "keyQualifications": "Principais Qualificações",
+    "highlights": "Destaques da Carreira",
+    "yearsExperience": "Anos de Experiência",
+    "projectsCompleted": "Projetos Concluídos",
+    "technologiesMastered": "Tecnologias Dominadas",
+    "industriesServed": "Setores Atendidos"
+  },
+  "experience": {
+    "noData": "Nenhuma informação de experiência disponível",
+    "title": "Experiência Profissional",
+    "year": "ano",
+    "years": "anos",
+    "achievements": "Principais Conquistas",
+    "responsibilities": "Principais Responsabilidades",
+    "technologies": "Tecnologias Utilizadas",
+    "filters": "Filtrar Experiência",
+    "roleType": "Tipo de Função",
+    "companySize": "Tamanho da Empresa",
+    "industry": "Setor",
+    "technology": "Tecnologia",
+    "allRoles": "Todas as Funções",
+    "allSizes": "Todos os Tamanhos",
+    "allIndustries": "Todos os Setores",
+    "allTechnologies": "Todas as Tecnologias",
+    "clearFilters": "Limpar Todos os Filtros",
+    "showingResults": "Mostrando {{count}} de {{total}} posições",
+    "noResults": "Nenhuma posição corresponde aos seus filtros",
+    "tryDifferentFilters": "Tente ajustar seus critérios de filtro"
+  },
+  "skills": {
+    "noData": "Nenhuma informação de habilidades disponível",
+    "title": "Habilidades Técnicas",
+    "subtitle": "Expertise e níveis de proficiência em várias tecnologias e domínios",
+    "search": "Buscar Habilidades",
+    "searchPlaceholder": "Digite para buscar...",
+    "category": "Categoria",
+    "level": "Nível de Proficiência",
+    "allCategories": "Todas as Categorias",
+    "allLevels": "Todos os Níveis",
+    "noResults": "Nenhuma habilidade encontrada",
+    "noResultsDesc": "Tente ajustar seus filtros ou termo de busca",
+    "summary": "Visão Geral das Habilidades",
+    "totalSkills": "Total de Habilidades",
+    "categories": "Categorias",
+    "expertLevel": "Nível Expert",
+    "avgExperience": "Média de Anos",
+    "levels": {
+      "expert": "Especialista",
+      "advanced": "Avançado",
+      "intermediate": "Intermediário",
+      "beginner": "Iniciante"
+    },
+    "viewMode": "Modo de Visualização",
+    "allSkillsList": "Todas as Habilidades"
+  },
+  "education": {
+    "noData": "Nenhuma informação de educação ou atividades disponível",
+    "title": "Educação e Atividades",
+    "subtitle": "Formação acadêmica e desenvolvimento profissional",
+    "educationTitle": "Educação",
+    "activitiesTitle": "Atividades e Conquistas",
+    "certification": "Certificação",
+    "degree": "Diploma",
+    "gpa": "Nota",
+    "honors": "Honras",
+    "certifications": "Certificações"
+  },
+  "sections": {
+    "hero": {
+      "title": "Currículo Profissional",
+      "subtitle": "Especialista em IA e Liderança Tecnológica"
+    },
+    "summary": {
+      "title": "Resumo Profissional",
+      "subtitle": "Principais qualificações e conquistas"
+    },
+    "experience": {
+      "title": "Experiência Profissional",
+      "subtitle": "Linha do tempo da carreira e conquistas",
+      "present": "Atual",
+      "years": "{{count}} ano",
+      "years_plural": "{{count}} anos",
+      "achievements": "Principais Conquistas",
+      "technologies": "Tecnologias Utilizadas"
+    },
+    "education": {
+      "title": "Educação e Certificações",
+      "subtitle": "Formação acadêmica e desenvolvimento profissional"
+    },
+    "skills": {
+      "title": "Habilidades Técnicas",
+      "subtitle": "Expertise e níveis de proficiência",
+      "categories": {
+        "programming": "Linguagens de Programação",
+        "frameworks": "Frameworks e Bibliotecas",
+        "databases": "Bancos de Dados",
+        "cloud": "Plataformas de Nuvem",
+        "tools": "Ferramentas de Desenvolvimento",
+        "methodologies": "Metodologias"
+      },
+      "levels": {
+        "expert": "Especialista",
+        "advanced": "Avançado",
+        "intermediate": "Intermediário",
+        "beginner": "Iniciante"
+      }
+    },
+    "projects": {
+      "title": "Portfólio de Projetos",
+      "subtitle": "Projetos selecionados e conquistas",
+      "duration": "Duração",
+      "client": "Cliente",
+      "industry": "Setor",
+      "technologies": "Tecnologias",
+      "problem": "Problema",
+      "action": "Ação",
+      "result": "Resultado"
+    }
+  },
+  "filters": {
+    "byIndustry": "Por Setor",
+    "byTechnology": "Por Tecnologia",
+    "byRole": "Por Função",
+    "byCompanySize": "Por Tamanho da Empresa",
+    "startups": "Startups",
+    "smallCompany": "Empresa Pequena",
+    "mediumCompany": "Empresa Média",
+    "largeCompany": "Empresa Grande",
+    "enterprise": "Corporação"
+  },
+  "contact": {
+    "title": "Entre em Contato",
+    "email": "E-mail",
+    "phone": "Telefone",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "location": "Localização"
+  },
+  "footer": {
+    "copyright": "© {{year}} Marcelo Negrini. Todos os direitos reservados.",
+    "builtWith": "Desenvolvido com Next.js e TypeScript"
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "navigation": {
+    "home": "Home",
+    "summary": "Summary",
+    "experience": "Experience",
+    "education": "Education",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "language": {
+    "english": "English",
+    "portuguese": "Portuguese",
+    "switchTo": "Switch to {{language}}"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "readMore": "Read More",
+    "readLess": "Read Less",
+    "viewDetails": "View Details",
+    "close": "Close",
+    "search": "Search",
+    "filter": "Filter",
+    "clear": "Clear",
+    "all": "All"
+  },
+  "hero": {
+    "noData": "No personal information available",
+    "scrollDown": "Scroll down",
+    "website": "Website"
+  },
+  "summary": {
+    "noData": "No summary information available",
+    "title": "Professional Summary",
+    "objective": "Objective",
+    "keyQualifications": "Key Qualifications",
+    "highlights": "Career Highlights",
+    "yearsExperience": "Years Experience",
+    "projectsCompleted": "Projects Completed",
+    "technologiesMastered": "Technologies Mastered",
+    "industriesServed": "Industries Served"
+  },
+  "experience": {
+    "noData": "No experience information available",
+    "title": "Professional Experience",
+    "year": "year",
+    "years": "years",
+    "achievements": "Key Achievements",
+    "responsibilities": "Key Responsibilities",
+    "technologies": "Technologies Used",
+    "filters": "Filter Experience",
+    "roleType": "Role Type",
+    "companySize": "Company Size",
+    "industry": "Industry",
+    "technology": "Technology",
+    "allRoles": "All Roles",
+    "allSizes": "All Sizes",
+    "allIndustries": "All Industries",
+    "allTechnologies": "All Technologies",
+    "clearFilters": "Clear All Filters",
+    "showingResults": "Showing {{count}} of {{total}} positions",
+    "noResults": "No positions match your filters",
+    "tryDifferentFilters": "Try adjusting your filter criteria"
+  },
+  "skills": {
+    "noData": "No skills information available",
+    "title": "Technical Skills",
+    "subtitle": "Expertise and proficiency levels across various technologies and domains",
+    "search": "Search Skills",
+    "searchPlaceholder": "Type to search...",
+    "category": "Category",
+    "level": "Proficiency Level",
+    "allCategories": "All Categories",
+    "allLevels": "All Levels",
+    "noResults": "No skills found",
+    "noResultsDesc": "Try adjusting your filters or search term",
+    "summary": "Skills Overview",
+    "totalSkills": "Total Skills",
+    "categories": "Categories",
+    "expertLevel": "Expert Level",
+    "avgExperience": "Avg. Years",
+    "levels": {
+      "expert": "Expert",
+      "advanced": "Advanced",
+      "intermediate": "Intermediate",
+      "beginner": "Beginner"
+    },
+    "viewMode": "View Mode",
+    "allSkillsList": "All Skills"
+  },
+  "education": {
+    "noData": "No education or activities information available",
+    "title": "Education & Activities",
+    "subtitle": "Academic background and professional development",
+    "educationTitle": "Education",
+    "activitiesTitle": "Activities & Achievements",
+    "certification": "Certification",
+    "degree": "Degree",
+    "gpa": "GPA",
+    "honors": "Honors",
+    "certifications": "Certifications"
+  },
+  "sections": {
+    "hero": {
+      "title": "Professional Resume",
+      "subtitle": "AI & Technology Leadership Expert"
+    },
+    "summary": {
+      "title": "Professional Summary",
+      "subtitle": "Key qualifications and achievements"
+    },
+    "experience": {
+      "title": "Professional Experience",
+      "subtitle": "Career timeline and achievements",
+      "present": "Present",
+      "years": "{{count}} year",
+      "years_plural": "{{count}} years",
+      "achievements": "Key Achievements",
+      "technologies": "Technologies Used"
+    },
+    "education": {
+      "title": "Education & Certifications",
+      "subtitle": "Academic background and professional development"
+    },
+    "skills": {
+      "title": "Technical Skills",
+      "subtitle": "Expertise and proficiency levels",
+      "categories": {
+        "programming": "Programming Languages",
+        "frameworks": "Frameworks & Libraries",
+        "databases": "Databases",
+        "cloud": "Cloud Platforms",
+        "tools": "Development Tools",
+        "methodologies": "Methodologies"
+      },
+      "levels": {
+        "expert": "Expert",
+        "advanced": "Advanced",
+        "intermediate": "Intermediate",
+        "beginner": "Beginner"
+      }
+    },
+    "projects": {
+      "title": "Projects Portfolio",
+      "subtitle": "Selected projects and achievements",
+      "duration": "Duration",
+      "client": "Client",
+      "industry": "Industry",
+      "technologies": "Technologies",
+      "problem": "Problem",
+      "action": "Action",
+      "result": "Result"
+    }
+  },
+  "filters": {
+    "byIndustry": "By Industry",
+    "byTechnology": "By Technology",
+    "byRole": "By Role",
+    "byCompanySize": "By Company Size",
+    "startups": "Startups",
+    "smallCompany": "Small Company",
+    "mediumCompany": "Medium Company",
+    "largeCompany": "Large Company",
+    "enterprise": "Enterprise"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "email": "Email",
+    "phone": "Phone",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "location": "Location"
+  },
+  "footer": {
+    "copyright": "© {{year}} Marcelo Negrini. All rights reserved.",
+    "builtWith": "Built with Next.js and TypeScript"
+  }
+}

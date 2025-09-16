@@ -2,6 +2,9 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
+import KeyboardNavigation from '@/components/accessibility/KeyboardNavigation';
+import AriaLabels from '@/components/accessibility/AriaLabels';
+import { useAccessibility } from '@/hooks/useAccessibility';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -83,46 +86,46 @@ const Layout: React.FC<LayoutProps> = ({ children, className = '' }) => {
   }, []);
 
   return (
-    <div className={`min-h-screen bg-gray-50 ${className}`}>
-      {/* Header with navigation */}
-      <Header 
-        currentSection={currentSection}
-        onSectionChange={handleSectionChange}
-      />
+    <KeyboardNavigation>
+      <div className={`min-h-screen bg-gray-50 ${className}`}>
+        {/* Header with navigation */}
+        <AriaLabels section="navigation">
+          <Header 
+            currentSection={currentSection}
+            onSectionChange={handleSectionChange}
+          />
+        </AriaLabels>
 
-      {/* Main content area */}
-      <main 
-        className={`relative transition-all duration-300 ${
-          isScrolling ? 'pointer-events-none' : 'pointer-events-auto'
-        }`}
-        role="main"
-      >
-        {/* Content wrapper with proper spacing for fixed header */}
-        <div className="pt-16">
-          {children}
-        </div>
-      </main>
+        {/* Main content area */}
+        <main 
+          className={`relative transition-all duration-300 ${
+            isScrolling ? 'pointer-events-none' : 'pointer-events-auto'
+          }`}
+          role="main"
+          id="main-content"
+          tabIndex={-1}
+          aria-label="Main content"
+        >
+          {/* Content wrapper with proper spacing for fixed header - mobile optimized */}
+          <div className="pt-14 sm:pt-16">
+            {children}
+          </div>
+        </main>
 
-      {/* Footer */}
-      <Footer />
+        {/* Footer */}
+        <Footer />
 
-      {/* Skip to content link for accessibility */}
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded-md z-50 transition-all duration-200"
-      >
-        Skip to main content
-      </a>
-
-      {/* Scroll to top button */}
-      <ScrollToTopButton />
-    </div>
+        {/* Scroll to top button */}
+        <ScrollToTopButton />
+      </div>
+    </KeyboardNavigation>
   );
 };
 
 // Scroll to top button component
 const ScrollToTopButton: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const { announceToScreenReader } = useAccessibility();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -138,26 +141,28 @@ const ScrollToTopButton: React.FC = () => {
       top: 0,
       behavior: 'smooth'
     });
+    announceToScreenReader('Scrolled to top of page', 'polite');
   };
+
+  if (!isVisible) return null;
 
   return (
     <button
       onClick={scrollToTop}
-      className={`fixed bottom-8 right-8 z-40 p-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-300 ${
-        isVisible 
-          ? 'opacity-100 translate-y-0 pointer-events-auto' 
-          : 'opacity-0 translate-y-4 pointer-events-none'
-      }`}
-      aria-label="Scroll to top"
+      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 lg:bottom-8 lg:right-8 z-40 p-2.5 sm:p-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-300 touch-manipulation opacity-100 translate-y-0"
+      aria-label="Scroll to top of page"
       title="Scroll to top"
+      type="button"
     >
       <svg 
-        className="w-5 h-5" 
+        className="w-4 h-4 sm:w-5 sm:h-5" 
         fill="none" 
         stroke="currentColor" 
         viewBox="0 0 24 24"
         aria-hidden="true"
+        role="img"
       >
+        <title>Up arrow</title>
         <path 
           strokeLinecap="round" 
           strokeLinejoin="round" 

@@ -1,30 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import useLanguage from '@/hooks/useLanguage';
-import type { SupportedLanguage } from '@/types';
+import React, { useState } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { useTranslation } from '@/hooks/useTranslation';
+import type { Language } from '@/contexts/LanguageContext';
 
 interface LanguageSelectorProps {
   className?: string;
 }
 
 const LanguageSelector: React.FC<LanguageSelectorProps> = ({ className = '' }) => {
-  const { language, setLanguage } = useLanguage();
+  const { language, setLanguage, isLoading } = useLanguage();
+  const { t } = useTranslation();
   const [isAnimating, setIsAnimating] = useState(false);
 
-  // Load language preference from localStorage on mount
-  useEffect(() => {
-    const savedLanguage = localStorage.getItem('preferred-language') as SupportedLanguage;
-    if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'pt')) {
-      setLanguage(savedLanguage);
-    }
-  }, [setLanguage]);
-
-  // Save language preference to localStorage when it changes
-  useEffect(() => {
-    localStorage.setItem('preferred-language', language);
-  }, [language]);
-
-  const handleLanguageChange = (newLanguage: SupportedLanguage) => {
-    if (newLanguage === language) return;
+  const handleLanguageChange = (newLanguage: Language) => {
+    if (newLanguage === language || isLoading) return;
     
     setIsAnimating(true);
     
@@ -38,13 +27,13 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ className = '' }) =
   const languages = [
     {
       code: 'en' as const,
-      label: 'English',
+      label: t('language.english'),
       flag: '🇺🇸',
       shortLabel: 'EN'
     },
     {
       code: 'pt' as const,
-      label: 'Português',
+      label: t('language.portuguese'),
       flag: '🇧🇷',
       shortLabel: 'PT'
     }
@@ -67,8 +56,8 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ className = '' }) =
               }
               ${isAnimating ? 'animate-pulse' : ''}
             `}
-            aria-label={`Switch to ${lang.label}`}
-            title={`Switch to ${lang.label}`}
+            aria-label={t('language.switchTo', { language: lang.label })}
+            title={t('language.switchTo', { language: lang.label })}
           >
             {/* Flag */}
             <span 

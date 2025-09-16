@@ -1,0 +1,72 @@
+[
+  {
+    "id": "e-commerce-platform-modernization",
+    "title": "E-commerce Platform Modernization",
+    "duration": "8 months",
+    "location": "São Paulo, SP",
+    "clientType": "Large Enterprise",
+    "projectType": "Digital Transformation",
+    "industry": "Retail",
+    "businessUnit": "Technology",
+    "problem": "Legacy e-commerce platform couldn't handle peak traffic during Black Friday, experiencing frequent crashes and poor user experience with 15-second page load times.",
+    "action": "Led complete platform modernization using microservices architecture, implemented React frontend with server-side rendering, migrated to AWS cloud infrastructure with auto-scaling capabilities, and established CI/CD pipelines.",
+    "result": "Achieved 99.9% uptime during peak seasons, reduced page load times by 70% (from 15s to 4.5s), increased conversion rates by 25%, and handled 10x traffic increase without performance degradation.",
+    "technologies": ["React", "AWS", "Microservices", "CI/CD"]
+  },
+  {
+    "id": "ai-powered-analytics-dashboard",
+    "title": "AI-Powered Analytics Dashboard",
+    "duration": "6 months",
+    "location": "Remote",
+    "clientType": "Mid-size Company",
+    "projectType": "Product Development",
+    "industry": "Healthcare",
+    "businessUnit": "Data Science",
+    "problem": "Healthcare providers needed real-time insights from patient data but lacked analytical capabilities, relying on manual reports that took days to generate and often contained outdated information.",
+    "action": "Developed machine learning models for predictive analytics using Python and TensorFlow, created intuitive dashboard using React and D3.js, implemented real-time data processing with Apache Kafka, and established automated alerting system.",
+    "result": "Enabled early detection of health risks improving patient outcomes by 30%, reduced report generation time from days to minutes, decreased operational costs by $500K annually, and increased patient satisfaction scores by 40%.",
+    "technologies": ["Python", "TensorFlow", "React", "D3.js", "Apache Kafka", "Machine Learning"]
+  },
+  {
+    "id": "fintech-mobile-application",
+    "title": "Fintech Mobile Application",
+    "duration": "12 months",
+    "location": "São Paulo, SP",
+    "clientType": "Startup",
+    "projectType": "Product Development",
+    "industry": "Financial Services",
+    "businessUnit": "Mobile Development",
+    "problem": "Traditional banking services were inaccessible to underbanked population, with complex processes, high fees, and limited digital options preventing financial inclusion.",
+    "action": "Built cross-platform mobile application using React Native, implemented secure payment processing with blockchain technology, integrated with multiple payment providers, and designed user-friendly interface for low-literacy users.",
+    "result": "Onboarded 100K+ users within first 6 months, processed $50M+ in transactions, achieved 4.8/5 app store rating, and reduced transaction costs by 60% compared to traditional banking.",
+    "technologies": ["React Native", "Blockchain"]
+  },
+  {
+    "id": "enterprise-resource-planning-system",
+    "title": "Enterprise Resource Planning System",
+    "duration": "18 months",
+    "location": "Remote",
+    "clientType": "Large Enterprise",
+    "projectType": "System Integration",
+    "industry": "Manufacturing",
+    "businessUnit": "Enterprise Solutions",
+    "problem": "Manufacturing company used 15+ disconnected systems for operations, resulting in data silos, manual processes, inventory discrepancies, and inability to track production in real-time.",
+    "action": "Designed and implemented comprehensive ERP system using Java Spring Boot, integrated with existing systems via REST APIs, built real-time dashboard with Angular, and established data synchronization processes.",
+    "result": "Unified all business processes into single platform, reduced manual data entry by 80%, improved inventory accuracy to 99.5%, decreased order processing time by 50%, and enabled real-time production monitoring.",
+    "technologies": ["Java", "Spring Boot", "REST APIs", "Angular"]
+  },
+  {
+    "id": "cloud-migration-and-devops-implementation",
+    "title": "Cloud Migration and DevOps Implementation",
+    "duration": "10 months",
+    "location": "São Paulo, SP",
+    "clientType": "Mid-size Company",
+    "projectType": "Infrastructure Modernization",
+    "industry": "E-commerce",
+    "businessUnit": "DevOps",
+    "problem": "Company infrastructure was entirely on-premises with manual deployments taking 2-3 days, frequent downtime during updates, and inability to scale during traffic spikes.",
+    "action": "Migrated entire infrastructure to AWS using containerization with Docker and Kubernetes, implemented Infrastructure as Code with Terraform, established CI/CD pipelines with Jenkins, and set up monitoring with Prometheus and Grafana.",
+    "result": "Reduced deployment time from days to minutes, achieved 99.95% uptime, decreased infrastructure costs by 40%, enabled automatic scaling handling 5x traffic spikes, and improved development team productivity by 60%.",
+    "technologies": ["AWS", "Docker", "Kubernetes", "Terraform", "Jenkins", "Prometheus", "Grafana", "CI/CD"]
+  }
+]

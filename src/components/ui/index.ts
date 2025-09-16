@@ -1,5 +1,20 @@
 // UI components exports
-export { default as LanguageSelector } from './LanguageSelector';
-export { default as SearchBar } from './SearchBar';
-export { default as FilterTags } from './FilterTags';
+export { default as AnimatedButton } from './AnimatedButton';
+export { default as AnimatedModal } from './AnimatedModal';
+export { default as AnimatedSection } from './AnimatedSection';
+export { default as AnimatedTimeline } from './AnimatedTimeline';
+export { default as AnimatedToast, useToast } from './AnimatedToast';
 export { default as ContactCard } from './ContactCard';
+export { default as FilteredContent } from './FilteredContent';
+export { default as FilterPanel } from './FilterPanel';
+export { default as FilterTags } from './FilterTags';
+export { default as GlobalSearch } from './GlobalSearch';
+export { default as HoverCard } from './HoverCard';
+export { default as LanguageSelector } from './LanguageSelector';
+export { default as LoadingSkeleton, TextSkeleton, CardSkeleton, AvatarSkeleton, ButtonSkeleton, TimelineSkeleton, SkillsSkeleton, ExperienceSkeletonLayout, SkillsSkeletonLayout, ProjectsSkeletonLayout } from './LoadingSkeleton';
+export { default as PageTransition } from './PageTransition';
+export { default as ProjectCard } from './ProjectCard';
+export { default as ProjectModal } from './ProjectModal';
+export { default as ScrollProgress } from './ScrollProgress';
+export { default as SearchBar } from './SearchBar';
+export { default as SearchResults } from './SearchResults';
