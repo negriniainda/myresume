@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   // For static export (GitHub Pages/Netlify)
   output: 'export',
   trailingSlash: true,
+  distDir: 'out',
   
   // Image optimization for static export
   images: {

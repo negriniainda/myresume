@@ -11,29 +11,12 @@
     NPM_VERSION = "10"
     NODE_ENV = "production"
 
-# Redirect rules for SPA routing
+# SPA fallback - only for HTML pages, not static assets
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-  conditions = {Role = ["admin"]}
-
-# Language-specific redirects
-[[redirects]]
-  from = "/pt/*"
-  to = "/pt/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/en/*"
-  to = "/en/index.html"
-  status = 200
-
-# Default redirect for root
-[[redirects]]
-  from = "/"
-  to = "/index.html"
-  status = 200
+  force = false
 
 # Security headers
 [[headers]]
@@ -44,7 +27,7 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:; frame-ancestors 'none';"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https:; frame-ancestors 'none';"
 
 # Cache static assets
 [[headers]]
