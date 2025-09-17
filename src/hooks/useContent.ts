@@ -17,7 +17,7 @@ export function useContent() {
       name: "Marcelo Negrini",
       title: "CTO / CPO / CAIO for Digital Transformation & Enterprise AI",
       location: "São Paulo, Brazil",
-      email: "mnegrini@hotmail.com",
+      email: "negrinimarcelo@gmail.com",
       phone: "+55 (11) 9-9636-5230",
       linkedin: "http://www.linkedin.com/in/marcelonegrini"
     },
