@@ -6,9 +6,6 @@ const DYNAMIC_CACHE = 'dynamic-v1';
 // Assets to cache immediately
 const STATIC_ASSETS = [
   '/',
-  '/index.html',
-  '/_next/static/css/',
-  '/_next/static/js/',
   '/manifest.json',
 ];
 

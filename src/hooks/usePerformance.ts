@@ -149,20 +149,8 @@ export const usePerformance = () => {
       timestamp: Date.now(),
     };
 
-    // Send to analytics service (replace with your analytics endpoint)
-    if (process.env.NODE_ENV === 'production') {
-      fetch('/api/analytics/performance', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(reportData),
-      }).catch(() => {
-        // Silently fail - don't impact user experience
-      });
-    } else {
-      console.log('Performance Metrics:', reportData);
-    }
+    // Log metrics for development - no API calls for now
+    console.log('Performance Metrics:', reportData);
   }, [metrics]);
 
   return {
