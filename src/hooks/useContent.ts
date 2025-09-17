@@ -11,9 +11,82 @@ import type { ResumeData, Project } from '@/types';
  */
 export function useContent() {
   const language = 'en'; // Temporary fallback
-  // Temporary fallback - disable data manager
-  const resumeData = null;
-  const projectsData = null;
+  // Temporary static data for testing
+  const resumeData = {
+    personalInfo: {
+      name: "Marcelo Negrini",
+      title: "AI & Technology Leadership Expert",
+      location: "Brazil",
+      email: "marcelo@example.com",
+      linkedin: "https://linkedin.com/in/marcelonegrini",
+      github: "https://github.com/marcelonegrini"
+    },
+    summary: {
+      title: "Professional Summary",
+      items: [
+        "20+ years of experience in technology leadership and AI implementation",
+        "Expert in digital transformation and team management",
+        "Proven track record in building scalable solutions"
+      ]
+    },
+    experience: [
+      {
+        id: "1",
+        position: "Technology Director",
+        company: "Tech Company",
+        location: "Brazil",
+        period: { start: "2020", end: "Present" },
+        description: "Leading technology initiatives and AI implementation",
+        achievements: [
+          { metric: "35%", description: "Cost reduction through automation", impact: "High" }
+        ],
+        technologies: ["Python", "AI/ML", "Cloud Computing"],
+        responsibilities: ["Team leadership", "Strategic planning"]
+      }
+    ],
+    education: [
+      {
+        id: "1",
+        degree: "Computer Science",
+        institution: "University",
+        location: "Brazil",
+        period: { start: "1998", end: "2002" },
+        description: "Bachelor's degree in Computer Science"
+      }
+    ],
+    skills: [
+      {
+        name: "Programming Languages",
+        skills: [
+          { name: "Python", level: "Expert", yearsOfExperience: 10 },
+          { name: "JavaScript", level: "Advanced", yearsOfExperience: 8 }
+        ]
+      }
+    ],
+    languages: [
+      { name: "Portuguese", proficiency: "Native" },
+      { name: "English", proficiency: "Fluent" }
+    ],
+    activities: ["Technology consulting", "Team mentoring"]
+  };
+  
+  const projectsData = [
+    {
+      id: "1",
+      title: "AI Implementation Project",
+      duration: "6 months",
+      location: "Brazil",
+      clientType: "Enterprise",
+      projectType: "AI/ML",
+      industry: "Technology",
+      businessUnit: "Innovation",
+      problem: "Need for automated processes",
+      action: "Implemented AI-driven automation",
+      result: "35% efficiency improvement",
+      technologies: ["Python", "TensorFlow", "AWS"]
+    }
+  ];
+  
   const isLoading = false;
   const error = null;
 
