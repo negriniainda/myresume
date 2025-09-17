@@ -1,6 +1,6 @@
 [build]
   # Build command with cache clearing
-  command = "npm run build"
+  command = "npm run build && echo 'Build completed at:' && date"
   
   # Directory to publish (Next.js static export output)
   publish = "out"
@@ -10,6 +10,7 @@
     NODE_VERSION = "18"
     NPM_VERSION = "10"
     NODE_ENV = "production"
+    NETLIFY_CACHE_ID = "v2"
 
 # Redirects are handled by public/_redirects file
 
