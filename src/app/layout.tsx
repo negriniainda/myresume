@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
-// import { I18nProvider } from '@/components/providers/I18nProvider';
+import { LanguageProvider } from '@/contexts/LanguageContext';
 import StructuredData from '@/components/seo/StructuredData';
 import Script from 'next/script';
 
@@ -142,7 +142,9 @@ export default function RootLayout({
         itemScope
         itemType="https://schema.org/WebPage"
       >
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
         
         {/* Performance Monitor - only in development */}
         {process.env.NODE_ENV === 'development' && (

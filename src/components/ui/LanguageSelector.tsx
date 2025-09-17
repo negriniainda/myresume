@@ -1,108 +1,113 @@
+'use client';
+
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { useTranslation } from '@/hooks/useTranslation';
-import type { Language } from '@/contexts/LanguageContext';
 
-interface LanguageSelectorProps {
-  className?: string;
-}
+const LanguageSelector: React.FC = () => {
+  const { language, setLanguage, isLoading } = useLanguage();
+  const [isOpen, setIsOpen] = useState(false);
 
-const LanguageSelector: React.FC<LanguageSelectorProps> = ({ className = '' }) => {
-  // Add error boundary and default values
-  const languageContext = useLanguage();
-  const { language = 'en', setLanguage = () => {}, isLoading = false } = languageContext || {};
-  const { t } = useTranslation();
-  const [isAnimating, setIsAnimating] = useState(false);
+  const languages = [
+    { code: 'en' as const, name: 'English', flag: '🇺🇸' },
+    { code: 'pt' as const, name: 'Português', flag: '🇧🇷' },
+  ];
 
-  // Safety check - if context is not available, render a simple fallback
-  if (!languageContext) {
+  const currentLanguage = languages.find(lang => lang.code === language) || languages[0];
+
+  const handleLanguageChange = (langCode: 'en' | 'pt') => {
+    setLanguage(langCode);
+    setIsOpen(false);
+  };
+
+  if (isLoading) {
     return (
-      <div className={`text-sm text-gray-500 ${className}`}>
-        EN
-      </div>
+      <div className="w-20 h-8 bg-gray-200 dark:bg-gray-700 rounded-md animate-pulse" />
     );
   }
 
-  const handleLanguageChange = (newLanguage: Language) => {
-    if (newLanguage === language || isLoading) return;
-    
-    setIsAnimating(true);
-    
-    // Add a small delay for visual feedback
-    setTimeout(() => {
-      setLanguage(newLanguage);
-      setIsAnimating(false);
-    }, 150);
-  };
-
-  const languages = [
-    {
-      code: 'en' as const,
-      label: t('language.english'),
-      flag: '🇺🇸',
-      shortLabel: 'EN'
-    },
-    {
-      code: 'pt' as const,
-      label: t('language.portuguese'),
-      flag: '🇧🇷',
-      shortLabel: 'PT'
-    }
-  ];
-
   return (
-    <div className={`relative ${className}`}>
-      {/* Toggle Switch Design */}
-      <div className="flex items-center space-x-2 bg-gray-100 rounded-full p-1 transition-all duration-300">
-        {languages.map((lang) => (
-          <button
-            key={lang.code}
-            onClick={() => handleLanguageChange(lang.code)}
-            className={`
-              relative flex items-center space-x-2 px-3 py-2 rounded-full text-sm font-medium
-              transition-all duration-300 ease-in-out transform
-              ${language === lang.code
-                ? 'bg-white text-blue-600 shadow-md scale-105'
-                : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
-              }
-              ${isAnimating ? 'animate-pulse' : ''}
-            `}
-            aria-label={t('language.switchTo', { language: lang.label })}
-            title={t('language.switchTo', { language: lang.label })}
-          >
-            {/* Flag */}
-            <span 
-              className={`text-lg transition-transform duration-300 ${
-                language === lang.code ? 'scale-110' : 'scale-100'
-              }`}
-              role="img"
-              aria-label={`${lang.label} flag`}
-            >
-              {lang.flag}
-            </span>
+    <div className="relative">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200"
+        aria-expanded={isOpen}
+        aria-haspopup="listbox"
+        aria-label={`Current language: ${currentLanguage.name}. Click to change language`}
+      >
+        <span className="text-base" role="img" aria-label={`${currentLanguage.name} flag`}>
+          {currentLanguage.flag}
+        </span>
+        <span className="hidden sm:inline">{currentLanguage.code.toUpperCase()}</span>
+        <svg
+          className={`w-4 h-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            {/* Backdrop */}
+            <div
+              className="fixed inset-0 z-40"
+              onClick={() => setIsOpen(false)}
+              aria-hidden="true"
+            />
             
-            {/* Language Code */}
-            <span className="font-semibold tracking-wide">
-              {lang.shortLabel}
-            </span>
-
-            {/* Active Indicator */}
-            {language === lang.code && (
-              <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-blue-600 rounded-full" />
-            )}
-          </button>
-        ))}
-      </div>
-
-      {/* Transition Animation Overlay */}
-      {isAnimating && (
-        <div className="absolute inset-0 bg-white/20 rounded-full animate-pulse pointer-events-none" />
-      )}
-
-      {/* Screen Reader Text */}
-      <span className="sr-only">
-        Current language: {languages.find(lang => lang.code === language)?.label}
-      </span>
+            {/* Dropdown */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: -10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: -10 }}
+              transition={{ duration: 0.15 }}
+              className="absolute right-0 top-full mt-2 w-40 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md shadow-lg z-50"
+              role="listbox"
+              aria-label="Language options"
+            >
+              <div className="py-1">
+                {languages.map((lang) => (
+                  <button
+                    key={lang.code}
+                    onClick={() => handleLanguageChange(lang.code)}
+                    className={`w-full flex items-center gap-3 px-4 py-2 text-sm text-left hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-150 ${
+                      language === lang.code
+                        ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400'
+                        : 'text-gray-700 dark:text-gray-300'
+                    }`}
+                    role="option"
+                    aria-selected={language === lang.code}
+                  >
+                    <span className="text-base" role="img" aria-label={`${lang.name} flag`}>
+                      {lang.flag}
+                    </span>
+                    <span>{lang.name}</span>
+                    {language === lang.code && (
+                      <svg
+                        className="w-4 h-4 ml-auto text-blue-600 dark:text-blue-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    )}
+                  </button>
+                ))}
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

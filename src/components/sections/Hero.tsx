@@ -121,7 +121,7 @@ const Hero: React.FC = () => {
               />
             </motion.div>
             {/* Decorative ring */}
-            <div className="absolute inset-0 w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 mx-auto rounded-full bg-gradient-to-r from-blue-400 to-purple-500 opacity-20 animate-pulse"></div>
+            <div className="absolute inset-0 w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 mx-auto rounded-full bg-gradient-to-r from-blue-400 to-purple-500 opacity-20"></div>
           </div>
         </motion.div>
 

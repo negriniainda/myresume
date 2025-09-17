@@ -1,7 +1,7 @@
 'use client';
 
 import { useMemo } from 'react';
-// import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguage } from '@/contexts/LanguageContext';
 import type { ResumeData, Project } from '@/types';
 
 /**
@@ -9,9 +9,9 @@ import type { ResumeData, Project } from '@/types';
  * Provides seamless switching between English and Portuguese content
  */
 export function useContent() {
-  const language = 'en'; // Temporary fallback
-  // Real resume data based on Resume.md
-  const resumeData = {
+  const { language } = useLanguage();
+  // Real resume data based on Resume.md - bilingual support
+  const resumeDataEn = {
     personalInfo: {
       name: "Marcelo Negrini",
       title: "CTO / CPO / CAIO for Digital Transformation & Enterprise AI",
@@ -175,6 +175,171 @@ export function useContent() {
     ]
   };
 
+  // Portuguese resume data
+  const resumeDataPt = {
+    personalInfo: {
+      name: "Marcelo Negrini",
+      title: "CTO / CPO / CAIO para Transformação Digital e IA Empresarial",
+      location: "São Paulo, Brasil",
+      email: "negrinimarcelo@gmail.com",
+      phone: "+55 (11) 9-9636-5230",
+      linkedin: "http://www.linkedin.com/in/marcelonegrini"
+    },
+    summary: {
+      title: "Resumo Profissional",
+      objective: "CTO / CPO / CAIO para empresas em transformação digital, especializado na implementação de IA empresarial com ROI mensurável.",
+      items: [
+        "Lidero a revolução da Inteligência Artificial no C-Suite, transformando organizações através de estratégias de IA que geram impacto mensurável nos negócios.",
+        "Arquitetei sistemas de IA que processaram mais de US$ 2 bilhões em transações financeiras",
+        "Reduzi custos operacionais em 35% para uma fintech americana através de IA multimodal",
+        "Aumentei a retenção de estudantes em 42% com plataformas educacionais de IA adaptativa",
+        "Liderei a transformação digital de grupo educacional (15k+ estudantes, 14 campi)",
+        "Especialista em arquitetura de soluções RAG, LLMs, agentes e sistemas multimodais, integrando IA conversacional com bancos de dados vetoriais em ambientes críticos",
+        "20+ anos construindo e liderando equipes globais de 150+ especialistas em tecnologia, produto e IA",
+        "Pioneiro na implementação de frameworks de compliance de IA (LGPD/BACEN), garantindo 100% de conformidade regulatória",
+        "Experiência internacional (EUA, Europa, Ásia) liderando projetos para Fortune 500 (Microsoft, IBM, eBay)"
+      ]
+    },
+    experience: [
+      {
+        id: "1",
+        position: "Chief Artificial Intelligence Officer (CAIO)",
+        company: "Ainda AI",
+        location: "São Paulo, Brasil",
+        period: { start: "07/2024", end: "Atual" },
+        description: "Lidero transformação baseada em IA para um portfólio de startups e scale-ups, focando em implementações de nível empresarial com ROI mensurável.",
+        achievements: [
+          { metric: "35%", description: "Reduzi custos operacionais para fintech americana (US$ 2B em ativos)", impact: "High" },
+          { metric: "42%", description: "Aumentei retenção de usuários com solução RAG educacional", impact: "High" },
+          { metric: "78%", description: "Reduzi tempo de resposta", impact: "Medium" },
+          { metric: "500k+", description: "Interações diárias processadas com 97% de precisão", impact: "High" }
+        ],
+        technologies: ["PyTorch", "TensorFlow", "LangChain", "OpenAI APIs", "Llama", "Pinecone", "Weaviate", "Kubernetes", "AWS", "Azure"],
+        responsibilities: [
+          "Arquitetar sistemas multimodais (RAG + LLMs) integrados com bancos de dados vetoriais",
+          "Desenvolver frameworks agênticos para IA conversacional (voz, texto, VR, vídeo)",
+          "Liderar equipes multifuncionais com especialistas em IA, ML e produto",
+          "Estabelecer padrões técnicos e frameworks de Ética em IA"
+        ]
+      },
+      {
+        id: "2",
+        position: "Chief Technology Officer (CTO) e Chief Product Officer (CPO)",
+        company: "Inspirali",
+        location: "São Paulo, Brasil",
+        period: { start: "07/2022", end: "06/2024" },
+        description: "Transformação digital completa de grupo de educação médica (14 campi, 15k+ estudantes), construindo áreas de TI, IA e Produtos Digitais do zero.",
+        achievements: [
+          { metric: "32%", description: "Aumentei retenção de estudantes através de IA adaptativa", impact: "High" },
+          { metric: "45%", description: "Aumentei satisfação dos estudantes", impact: "High" },
+          { metric: "28%", description: "Reduzi custos de aquisição", impact: "Medium" },
+          { metric: "41%", description: "Aumentei conversão de candidatos", impact: "Medium" },
+          { metric: "R$ 8,2M/ano", description: "Gerei economia operacional através de automação inteligente", impact: "High" },
+          { metric: "65%", description: "Reduzi time-to-market com IA em Discovery/Delivery", impact: "High" }
+        ],
+        technologies: ["Python", "TensorFlow", "Salesforce", "AWS", "Azure", "Kubernetes", "OpenAI", "Claude", "Google Gemini", "Llama"],
+        responsibilities: [
+          "Construí e liderei equipe de 102 profissionais (tecnologia + produto)",
+          "Modernizei infraestrutura em 14 campi com 99,9% de uptime",
+          "Implementei DevOps integrado com IA para otimização de processos"
+        ]
+      },
+      {
+        id: "3",
+        position: "Chief Technology Officer (CTO) e Chief Product Officer (CPO)",
+        company: "Provu",
+        location: "São Paulo, Brasil",
+        period: { start: "06/2020", end: "05/2022" },
+        description: "CTO de fintech regulamentada (Banco Central), escalando operações de crédito através de inovações em IA e ML.",
+        achievements: [
+          { metric: "3 dias para 4 minutos", description: "Reduzi tempo de aprovação de crédito", impact: "High" },
+          { metric: "R$ 500M+", description: "Processados com 99,8% de precisão", impact: "High" },
+          { metric: "99,99%", description: "Uptime da arquitetura cloud-native", impact: "High" },
+          { metric: "0", description: "Incidentes críticos em 12 meses", impact: "High" },
+          { metric: "40→120", description: "Tripliquei equipe técnica mantendo <12% turnover", impact: "Medium" }
+        ],
+        technologies: ["Python", "Node.js", "Kubernetes", "Kafka", "AWS", "Azure", "Terraform", "Databricks", "Snowflake"],
+        responsibilities: [
+          "Arquitetei engine de crédito baseado em IA",
+          "Implementei análise preditiva de risco",
+          "Estabeleci framework DevSecOps",
+          "Participei do grupo de trabalho Open Banking no Banco Central"
+        ]
+      }
+    ],
+    education: [
+      {
+        id: "1",
+        degree: "Certificado em Arquitetura da Informação",
+        institution: "New York Institute of Technology",
+        location: "Nova York, NY, EUA",
+        period: { start: "1995", end: "1995" },
+        description: "Certificado em Arquitetura da Informação"
+      },
+      {
+        id: "2",
+        degree: "Bacharelado em Comunicação Social",
+        institution: "Fundação Cásper Líbero",
+        location: "São Paulo, Brasil",
+        period: { start: "1992", end: "1992" },
+        description: "Bacharelado em Comunicação Social"
+      },
+      {
+        id: "3",
+        degree: "Técnico em Ciência da Computação",
+        institution: "Escola Técnica Federal",
+        location: "São Paulo, Brasil",
+        period: { start: "1987", end: "1987" },
+        description: "Técnico em Ciência da Computação"
+      }
+    ],
+    skills: [
+      {
+        name: "Inteligência Artificial e Machine Learning",
+        skills: [
+          { name: "PyTorch", level: "Expert" as const, yearsOfExperience: 5 },
+          { name: "TensorFlow", level: "Expert" as const, yearsOfExperience: 6 },
+          { name: "LangChain", level: "Expert" as const, yearsOfExperience: 2 },
+          { name: "OpenAI APIs", level: "Expert" as const, yearsOfExperience: 3 },
+          { name: "Arquitetura RAG", level: "Expert" as const, yearsOfExperience: 3 },
+          { name: "LLMs", level: "Expert" as const, yearsOfExperience: 3 }
+        ]
+      },
+      {
+        name: "Linguagens de Programação",
+        skills: [
+          { name: "Python", level: "Expert" as const, yearsOfExperience: 15 },
+          { name: "Node.js", level: "Advanced" as const, yearsOfExperience: 10 },
+          { name: "Java", level: "Advanced" as const, yearsOfExperience: 12 },
+          { name: "C#", level: "Advanced" as const, yearsOfExperience: 8 },
+          { name: "Swift", level: "Intermediate" as const, yearsOfExperience: 6 }
+        ]
+      },
+      {
+        name: "Cloud e Infraestrutura",
+        skills: [
+          { name: "AWS", level: "Expert" as const, yearsOfExperience: 12 },
+          { name: "Azure", level: "Expert" as const, yearsOfExperience: 8 },
+          { name: "Kubernetes", level: "Expert" as const, yearsOfExperience: 6 },
+          { name: "Docker", level: "Advanced" as const, yearsOfExperience: 8 },
+          { name: "Terraform", level: "Advanced" as const, yearsOfExperience: 5 }
+        ]
+      }
+    ],
+    languages: [
+      { name: "Português", proficiency: "Nativo" },
+      { name: "Inglês", proficiency: "Fluente" },
+      { name: "Espanhol", proficiency: "Intermediário" }
+    ],
+    activities: [
+      "Professor de Marketing Digital – MBA – ESPM Escola Superior de Propaganda e Marketing",
+      "Mentor de Startups no Endeavor Brasil",
+      "Voluntário – Consultoria em Marketing Digital para AACD – Associação de Assistência à Criança Deficiente",
+      "Participante do Grupo de Trabalho Open Banking e Open Finance no Banco Central do Brasil",
+      "Participante do Grupo de Trabalho de Pagamentos Digitais (PIX) no Banco Central do Brasil"
+    ]
+  };
+
   // Real projects data based on Projects.md (first few projects)
   const projectsData = [
     {
@@ -228,11 +393,9 @@ export function useContent() {
    * Get resume data for current language
    */
   const currentResumeData = useMemo((): ResumeData | null => {
-    if (!resumeData) return null;
-
-    // Return static data directly (not language-keyed for now)
-    return resumeData;
-  }, [resumeData, language]);
+    // Return data based on current language
+    return language === 'pt' ? resumeDataPt : resumeDataEn;
+  }, [language]);
 
   /**
    * Get projects data for current language
@@ -336,7 +499,7 @@ export function useContent() {
     return {
       hasResumeData: !!currentResumeData,
       hasProjectsData: currentProjectsData.length > 0,
-      resumeLanguages: resumeData ? Object.keys(resumeData) : [],
+      resumeLanguages: ['en', 'pt'],
       projectsLanguages: projectsData ? Object.keys(projectsData) : [],
       currentLanguage: language,
       isContentComplete: !!currentResumeData && currentProjectsData.length > 0,
