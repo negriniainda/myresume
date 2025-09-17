@@ -82,8 +82,7 @@ const Header: React.FC<HeaderProps> = ({
               onClick={() => scrollToSection('hero')}
               className="text-lg sm:text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors duration-200 truncate"
             >
-              <span className="hidden xs:inline">Marcelo Negrini</span>
-              <span className="xs:hidden">M. Negrini</span>
+              Marcelo Negrini
             </button>
           </div>
 
