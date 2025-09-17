@@ -8,9 +8,20 @@ interface LanguageSelectorProps {
 }
 
 const LanguageSelector: React.FC<LanguageSelectorProps> = ({ className = '' }) => {
-  const { language, setLanguage, isLoading } = useLanguage();
+  // Add error boundary and default values
+  const languageContext = useLanguage();
+  const { language = 'en', setLanguage = () => {}, isLoading = false } = languageContext || {};
   const { t } = useTranslation();
   const [isAnimating, setIsAnimating] = useState(false);
+
+  // Safety check - if context is not available, render a simple fallback
+  if (!languageContext) {
+    return (
+      <div className={`text-sm text-gray-500 ${className}`}>
+        EN
+      </div>
+    );
+  }
 
   const handleLanguageChange = (newLanguage: Language) => {
     if (newLanguage === language || isLoading) return;
