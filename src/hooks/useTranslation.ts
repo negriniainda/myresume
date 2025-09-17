@@ -1,45 +1,39 @@
 'use client';
 
-import { useTranslation as useI18nTranslation } from 'react-i18next';
-import { useLanguage } from '@/contexts/LanguageContext';
+// import { useTranslation as useI18nTranslation } from 'react-i18next';
+// import { useLanguage } from '@/contexts/LanguageContext';
 
 /**
  * Custom hook that extends react-i18next's useTranslation with additional functionality
  * for our bilingual resume application
  */
 export function useTranslation() {
-  const { t, i18n } = useI18nTranslation();
-  const { language, setLanguage, isLoading } = useLanguage();
+  // Temporary fallback implementation without i18n
+  const language = 'en';
+  const setLanguage = () => {};
+  const isLoading = false;
 
   /**
    * Get translation with fallback support
    */
-  const translate = (key: string, options?: any) => {
-    try {
-      return t(key, options);
-    } catch (error) {
-      console.warn(`Translation missing for key: ${key}`);
-      return key;
-    }
+  const translate = (key: string, fallback?: string) => {
+    // Return fallback or key as fallback
+    return fallback || key;
   };
 
   /**
    * Get translation with HTML support (for rich text content)
    */
-  const translateHTML = (key: string, options?: any) => {
-    try {
-      return t(key, { ...options, interpolation: { escapeValue: false } });
-    } catch (error) {
-      console.warn(`Translation missing for key: ${key}`);
-      return key;
-    }
+  const translateHTML = (key: string, fallback?: string) => {
+    // Return fallback or key as fallback
+    return fallback || key;
   };
 
   /**
    * Check if a translation key exists
    */
   const hasTranslation = (key: string): boolean => {
-    return i18n.exists(key);
+    return false; // No translations available in fallback mode
   };
 
   /**
@@ -92,6 +86,6 @@ export function useTranslation() {
     formatDate,
     formatNumber,
     getContentKey,
-    i18n,
+    i18n: null, // No i18n in fallback mode
   };
 }

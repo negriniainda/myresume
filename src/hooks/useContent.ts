@@ -1,7 +1,7 @@
 'use client';
 
 import { useMemo } from 'react';
-import { useLanguage } from '@/contexts/LanguageContext';
+// import { useLanguage } from '@/contexts/LanguageContext';
 import { useDataManager } from '@/hooks/useDataManager';
 import type { ResumeData, Project } from '@/types';
 
@@ -10,8 +10,12 @@ import type { ResumeData, Project } from '@/types';
  * Provides seamless switching between English and Portuguese content
  */
 export function useContent() {
-  const { language } = useLanguage();
-  const { resumeData, projectsData, isLoading, error } = useDataManager();
+  const language = 'en'; // Temporary fallback
+  // Temporary fallback - disable data manager
+  const resumeData = null;
+  const projectsData = null;
+  const isLoading = false;
+  const error = null;
 
   /**
    * Get resume data for current language

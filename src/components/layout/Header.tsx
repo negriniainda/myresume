@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { LanguageSelector } from '@/components/ui';
+// import { LanguageSelector } from '@/components/ui';
 import ScrollProgress from '@/components/ui/ScrollProgress';
 import useScrollProgress from '@/hooks/useScrollProgress';
 
@@ -133,9 +133,9 @@ const Header: React.FC<HeaderProps> = ({
 
           {/* Language Selector and Mobile Menu Button */}
           <div className="flex items-center space-x-2 sm:space-x-3">
-            <div className="scale-90 sm:scale-100">
+            {/* <div className="scale-90 sm:scale-100">
               <LanguageSelector />
-            </div>
+            </div> */}
             
             {/* Mobile menu button */}
             <button
