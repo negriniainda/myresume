@@ -2,7 +2,6 @@
 
 import { useMemo } from 'react';
 // import { useLanguage } from '@/contexts/LanguageContext';
-import { useDataManager } from '@/hooks/useDataManager';
 import type { ResumeData, Project } from '@/types';
 
 /**
@@ -133,32 +132,32 @@ export function useContent() {
       {
         name: "Artificial Intelligence & Machine Learning",
         skills: [
-          { name: "PyTorch", level: "Expert", yearsOfExperience: 5 },
-          { name: "TensorFlow", level: "Expert", yearsOfExperience: 6 },
-          { name: "LangChain", level: "Expert", yearsOfExperience: 2 },
-          { name: "OpenAI APIs", level: "Expert", yearsOfExperience: 3 },
-          { name: "RAG Architecture", level: "Expert", yearsOfExperience: 3 },
-          { name: "LLMs", level: "Expert", yearsOfExperience: 3 }
+          { name: "PyTorch", level: "Expert" as const, yearsOfExperience: 5 },
+          { name: "TensorFlow", level: "Expert" as const, yearsOfExperience: 6 },
+          { name: "LangChain", level: "Expert" as const, yearsOfExperience: 2 },
+          { name: "OpenAI APIs", level: "Expert" as const, yearsOfExperience: 3 },
+          { name: "RAG Architecture", level: "Expert" as const, yearsOfExperience: 3 },
+          { name: "LLMs", level: "Expert" as const, yearsOfExperience: 3 }
         ]
       },
       {
         name: "Programming Languages",
         skills: [
-          { name: "Python", level: "Expert", yearsOfExperience: 15 },
-          { name: "Node.js", level: "Advanced", yearsOfExperience: 10 },
-          { name: "Java", level: "Advanced", yearsOfExperience: 12 },
-          { name: "C#", level: "Advanced", yearsOfExperience: 8 },
-          { name: "Swift", level: "Intermediate", yearsOfExperience: 6 }
+          { name: "Python", level: "Expert" as const, yearsOfExperience: 15 },
+          { name: "Node.js", level: "Advanced" as const, yearsOfExperience: 10 },
+          { name: "Java", level: "Advanced" as const, yearsOfExperience: 12 },
+          { name: "C#", level: "Advanced" as const, yearsOfExperience: 8 },
+          { name: "Swift", level: "Intermediate" as const, yearsOfExperience: 6 }
         ]
       },
       {
         name: "Cloud & Infrastructure",
         skills: [
-          { name: "AWS", level: "Expert", yearsOfExperience: 12 },
-          { name: "Azure", level: "Expert", yearsOfExperience: 8 },
-          { name: "Kubernetes", level: "Expert", yearsOfExperience: 6 },
-          { name: "Docker", level: "Advanced", yearsOfExperience: 8 },
-          { name: "Terraform", level: "Advanced", yearsOfExperience: 5 }
+          { name: "AWS", level: "Expert" as const, yearsOfExperience: 12 },
+          { name: "Azure", level: "Expert" as const, yearsOfExperience: 8 },
+          { name: "Kubernetes", level: "Expert" as const, yearsOfExperience: 6 },
+          { name: "Docker", level: "Advanced" as const, yearsOfExperience: 8 },
+          { name: "Terraform", level: "Advanced" as const, yearsOfExperience: 5 }
         ]
       }
     ],
@@ -175,7 +174,7 @@ export function useContent() {
       "Participant in the Digital Payments Working Group (PIX) at the Central Bank of Brazil"
     ]
   };
-  
+
   // Real projects data based on Projects.md (first few projects)
   const projectsData = [
     {
@@ -221,7 +220,7 @@ export function useContent() {
       technologies: ["Salesforce Financial Services Cloud", "API Integration", "Risk Analytics", "Compliance Tools"]
     }
   ];
-  
+
   const isLoading = false;
   const error = null;
 
@@ -230,7 +229,7 @@ export function useContent() {
    */
   const currentResumeData = useMemo((): ResumeData | null => {
     if (!resumeData) return null;
-    
+
     // Return static data directly (not language-keyed for now)
     return resumeData;
   }, [resumeData, language]);
@@ -240,7 +239,7 @@ export function useContent() {
    */
   const currentProjectsData = useMemo((): Project[] => {
     if (!projectsData) return [];
-    
+
     // Return static data directly (not language-keyed for now)
     return projectsData;
   }, [projectsData, language]);
@@ -253,23 +252,23 @@ export function useContent() {
     fallbackLanguage: 'en' | 'pt' = 'en'
   ): T | null => {
     if (!content) return null;
-    
+
     // Try current language first
     if (content[language]) {
       return content[language];
     }
-    
+
     // Fallback to specified language
     if (content[fallbackLanguage]) {
       return content[fallbackLanguage];
     }
-    
+
     // Last resort: return any available content
     const availableKeys = Object.keys(content);
     if (availableKeys.length > 0) {
       return content[availableKeys[0]];
     }
-    
+
     return null;
   };
 
@@ -296,16 +295,16 @@ export function useContent() {
     fallback?: string
   ): string => {
     if (!text) return fallback || '';
-    
+
     if (typeof text === 'string') {
       return text;
     }
-    
+
     // Handle object with language keys
     if (typeof text === 'object') {
       return text[language] || text.en || text.pt || fallback || '';
     }
-    
+
     return fallback || '';
   };
 
@@ -314,19 +313,19 @@ export function useContent() {
    */
   const formatContent = (content: any): string => {
     if (!content) return '';
-    
+
     if (typeof content === 'string') {
       return content;
     }
-    
+
     if (Array.isArray(content)) {
       return content.join(', ');
     }
-    
+
     if (typeof content === 'object') {
       return getLocalizedText(content);
     }
-    
+
     return String(content);
   };
 
@@ -348,11 +347,11 @@ export function useContent() {
     // Current language content
     resumeData: currentResumeData,
     projectsData: currentProjectsData,
-    
+
     // Loading and error states
     isLoading,
     error,
-    
+
     // Utility functions
     getContentWithFallback,
     hasContentInCurrentLanguage,
@@ -360,7 +359,7 @@ export function useContent() {
     getLocalizedText,
     formatContent,
     getContentStats,
-    
+
     // Current language
     language,
   };

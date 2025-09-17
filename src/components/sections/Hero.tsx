@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useContent } from '@/hooks/useContent';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -102,6 +103,28 @@ const Hero: React.FC = () => {
         animate="visible"
         className="container mx-auto px-6 lg:px-8 text-center relative z-10"
       >
+        {/* Profile Image */}
+        <motion.div variants={itemVariants} className="mb-8">
+          <div className="relative inline-block">
+            <motion.div
+              className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 mx-auto mb-6 rounded-full overflow-hidden shadow-2xl ring-4 ring-white dark:ring-gray-700"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
+              <Image
+                src="/negrini.jpg"
+                alt={`${personalInfo.name} - Profile Photo`}
+                width={192}
+                height={192}
+                className="w-full h-full object-cover"
+                priority
+              />
+            </motion.div>
+            {/* Decorative ring */}
+            <div className="absolute inset-0 w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 mx-auto rounded-full bg-gradient-to-r from-blue-400 to-purple-500 opacity-20 animate-pulse"></div>
+          </div>
+        </motion.div>
+
         <motion.div variants={itemVariants} className="mb-8">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
