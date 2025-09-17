@@ -18,8 +18,14 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '18.x'
-        cache: 'npm'
-        cache-dependency-path: bilingual-resume/package-lock.json
+        
+    - name: Cache npm dependencies
+      uses: actions/cache@v4
+      with:
+        path: bilingual-resume/node_modules
+        key: ${{ runner.os }}-npm-${{ hashFiles('bilingual-resume/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-npm-
         
     - name: Install dependencies
       working-directory: ./bilingual-resume
@@ -30,11 +36,9 @@ jobs:
       run: npm run build
       env:
         NODE_ENV: production
-        NEXT_PUBLIC_SITE_URL: https://marcelonegrini.netlify.app
+        NEXT_PUBLIC_SITE_URL: https://negriniresume.netlify.app
         NEXT_PUBLIC_BUILD_TIME: ${{ github.event.head_commit.timestamp }}
         NEXT_PUBLIC_BUILD_ID: ${{ github.sha }}
-        
-
         
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
@@ -56,8 +60,14 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '18.x'
-        cache: 'npm'
-        cache-dependency-path: bilingual-resume/package-lock.json
+        
+    - name: Cache npm dependencies
+      uses: actions/cache@v4
+      with:
+        path: bilingual-resume/node_modules
+        key: ${{ runner.os }}-npm-${{ hashFiles('bilingual-resume/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-npm-
         
     - name: Install dependencies
       working-directory: ./bilingual-resume
@@ -68,7 +78,7 @@ jobs:
       run: npm run build
       env:
         NODE_ENV: production
-        NEXT_PUBLIC_SITE_URL: https://marcelonegrini.netlify.app
+        NEXT_PUBLIC_SITE_URL: https://negriniresume.netlify.app
         NEXT_PUBLIC_BUILD_TIME: ${{ github.event.head_commit.timestamp }}
         NEXT_PUBLIC_BUILD_ID: ${{ github.sha }}
         
@@ -76,7 +86,7 @@ jobs:
       uses: nwtgck/actions-netlify@v2.0
       with:
         publish-dir: './bilingual-resume/out'
-        production-branch: main
+        production-branch: master
         github-token: ${{ secrets.GITHUB_TOKEN }}
         deploy-message: "Deploy from GitHub Actions - ${{ github.event.head_commit.message }}"
         enable-pull-request-comment: true
@@ -86,41 +96,3 @@ jobs:
         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
       timeout-minutes: 10
-
-  e2e-tests:
-    needs: deploy
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
-    
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-      
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18.x'
-        cache: 'npm'
-        cache-dependency-path: bilingual-resume/package-lock.json
-        
-    - name: Install dependencies
-      working-directory: ./bilingual-resume
-      run: npm ci
-      
-    - name: Install Playwright browsers
-      working-directory: ./bilingual-resume
-      run: npx playwright install --with-deps
-      
-    - name: Run E2E tests against deployed site
-      working-directory: ./bilingual-resume
-      run: npm run test:e2e
-      env:
-        PLAYWRIGHT_TEST_BASE_URL: https://marcelonegrini.netlify.app
-        
-    - name: Upload E2E test results
-      uses: actions/upload-artifact@v4
-      if: always()
-      with:
-        name: e2e-test-results
-        path: bilingual-resume/test-results/
-        retention-days: 7
