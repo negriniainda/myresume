@@ -14,16 +14,19 @@ export function I18nProvider({ children }: I18nProviderProps) {
 
   useEffect(() => {
     // Initialize i18n if not already initialized
-    if (!i18n.isInitialized) {
-      i18n.init().then(() => {
+    const initializeI18n = async () => {
+      try {
+        if (!i18n.isInitialized) {
+          await i18n.init();
+        }
         setIsInitialized(true);
-      }).catch((error) => {
+      } catch (error) {
         console.error('Failed to initialize i18n:', error);
         setIsInitialized(true); // Still render to avoid blocking the app
-      });
-    } else {
-      setIsInitialized(true);
-    }
+      }
+    };
+
+    initializeI18n();
   }, []);
 
   // Show loading state while i18n is initializing

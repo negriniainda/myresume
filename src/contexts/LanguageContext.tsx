@@ -22,6 +22,12 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
   const [language, setLanguageState] = useState<Language>('en');
   const [isLoading, setIsLoading] = useState(true);
 
+  // Add safety check for i18n
+  if (!i18n) {
+    console.error('i18n not available in LanguageProvider');
+    return <>{children}</>;
+  }
+
   // Initialize language from localStorage or browser preference
   useEffect(() => {
     const initializeLanguage = () => {
@@ -77,7 +83,13 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
 export function useLanguage(): LanguageContextType {
   const context = useContext(LanguageContext);
   if (context === undefined) {
-    throw new Error('useLanguage must be used within a LanguageProvider');
+    // Return default values instead of throwing error to prevent crashes
+    console.warn('useLanguage called outside of LanguageProvider, using defaults');
+    return {
+      language: 'en',
+      setLanguage: () => {},
+      isLoading: false,
+    };
   }
   return context;
 }
