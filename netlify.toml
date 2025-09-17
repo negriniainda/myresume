@@ -1,5 +1,5 @@
 [build]
-  # Build command
+  # Build command with cache clearing
   command = "npm run build"
   
   # Directory to publish (Next.js static export output)
@@ -11,12 +11,7 @@
     NPM_VERSION = "10"
     NODE_ENV = "production"
 
-# SPA fallback - only for HTML pages, not static assets
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  force = false
+# Redirects are handled by public/_redirects file
 
 # Security headers
 [[headers]]

@@ -1,0 +1,7 @@
+# Netlify redirects file
+# Static assets should be served as-is
+/_next/static/* /_next/static/:splat 200
+/static/* /static/:splat 200
+
+# SPA fallback for HTML pages only
+/* /index.html 200
