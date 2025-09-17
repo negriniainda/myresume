@@ -96,8 +96,8 @@ export function useContent() {
   const currentResumeData = useMemo((): ResumeData | null => {
     if (!resumeData) return null;
     
-    // Return data based on current language
-    return resumeData[language] || resumeData.en || null;
+    // Return static data directly (not language-keyed for now)
+    return resumeData;
   }, [resumeData, language]);
 
   /**
@@ -106,8 +106,8 @@ export function useContent() {
   const currentProjectsData = useMemo((): Project[] => {
     if (!projectsData) return [];
     
-    // Return projects based on current language
-    return projectsData[language] || projectsData.en || [];
+    // Return static data directly (not language-keyed for now)
+    return projectsData;
   }, [projectsData, language]);
 
   /**

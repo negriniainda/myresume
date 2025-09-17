@@ -320,7 +320,7 @@ const Skills: React.FC = () => {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                   <div className="text-center">
                     <div className="text-3xl md:text-4xl font-bold mb-2">
-                      {skills.reduce((total, cat) => total + cat.skills.length, 0)}
+                      {resumeData?.skills?.reduce((total, cat) => total + cat.skills.length, 0) || 0}
                     </div>
                     <div className="text-sm md:text-base opacity-90">
                       {t('skills.totalSkills', 'Total Skills')}
@@ -329,7 +329,7 @@ const Skills: React.FC = () => {
                   
                   <div className="text-center">
                     <div className="text-3xl md:text-4xl font-bold mb-2">
-                      {skills.length}
+                      {resumeData?.skills?.length || 0}
                     </div>
                     <div className="text-sm md:text-base opacity-90">
                       {t('skills.categories', 'Categories')}
@@ -338,9 +338,9 @@ const Skills: React.FC = () => {
                   
                   <div className="text-center">
                     <div className="text-3xl md:text-4xl font-bold mb-2">
-                      {skills.reduce((total, cat) => 
+                      {resumeData?.skills?.reduce((total, cat) => 
                         total + cat.skills.filter(skill => skill.level === 'Expert').length, 0
-                      )}
+                      ) || 0}
                     </div>
                     <div className="text-sm md:text-base opacity-90">
                       {t('skills.expertLevel', 'Expert Level')}
@@ -349,13 +349,13 @@ const Skills: React.FC = () => {
                   
                   <div className="text-center">
                     <div className="text-3xl md:text-4xl font-bold mb-2">
-                      {Math.round(
-                        skills.reduce((total, cat) => 
+                      {resumeData?.skills ? Math.round(
+                        resumeData.skills.reduce((total, cat) => 
                           total + cat.skills.reduce((sum, skill) => 
                             sum + (skill.yearsOfExperience || 0), 0
                           ), 0
-                        ) / skills.reduce((total, cat) => total + cat.skills.length, 0)
-                      )}
+                        ) / resumeData.skills.reduce((total, cat) => total + cat.skills.length, 0)
+                      ) : 0}
                     </div>
                     <div className="text-sm md:text-base opacity-90">
                       {t('skills.avgExperience', 'Avg. Years')}
